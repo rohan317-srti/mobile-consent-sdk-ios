@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ConsentUI
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ConsentUI
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -38,8 +39,8 @@ extension ConsentUI.SettingsPrompt : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.SettingsPrompt : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.SettingsPrompt, b: ConsentUI.SettingsPrompt) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -47,9 +48,9 @@ extension ConsentUI.SettingsPrompt : Swift.Hashable {
 public struct CustomFont {
   public let name: Swift.String
   public let size: CoreFoundation.CGFloat
-  public let type: SwiftUI.Font.TextStyle
-  public init(name: Swift.String, size: CoreFoundation.CGFloat, type: SwiftUI.Font.TextStyle)
-  public var font: SwiftUI.Font {
+  public let type: SwiftUICore.Font.TextStyle
+  public init(name: Swift.String, size: CoreFoundation.CGFloat, type: SwiftUICore.Font.TextStyle)
+  public var font: SwiftUICore.Font {
     get
   }
   public var uiFont: UIKit.UIFont {
@@ -66,8 +67,8 @@ extension ConsentUI.ATTConfig : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.ATTConfig : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.ATTConfig, b: ConsentUI.ATTConfig) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -108,8 +109,8 @@ public enum PrivaciKey : Swift.Hashable, Swift.Codable, Swift.Equatable {
   public var rawValue: Swift.String {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.PrivaciKey, b: ConsentUI.PrivaciKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -243,8 +244,8 @@ public struct ConsentBannerConfig : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.ConsentBannerConfig : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.ConsentBannerConfig, b: ConsentUI.ConsentBannerConfig) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -286,8 +287,8 @@ public struct BannerConfig : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.BannerConfig : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.BannerConfig, b: ConsentUI.BannerConfig) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -306,8 +307,8 @@ public struct CustomColors : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.CustomColors : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.CustomColors, b: ConsentUI.CustomColors) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -330,8 +331,8 @@ extension ConsentUI.SDK : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.SDK : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.SDK, b: ConsentUI.SDK) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -365,8 +366,8 @@ extension ConsentUI.MainConfiguration : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.MainConfiguration : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.MainConfiguration, b: ConsentUI.MainConfiguration) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -387,8 +388,8 @@ extension ConsentUI.AppPermission : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.AppPermission : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.AppPermission, b: ConsentUI.AppPermission) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -410,8 +411,8 @@ extension ConsentUI.Purpose : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ConsentUI.Purpose : Swift.Hashable {
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: ConsentUI.Purpose, b: ConsentUI.Purpose) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -492,29 +493,19 @@ public enum ComplianceType : Swift.String, Swift.Codable {
 }
 extension ConsentUI.ConsentSDK {
   public func setupSDK(options: ConsentUI.ConsentSDKOptions)
-  #if compiler(>=5.3) && $AsyncAwait
   public func uploadConsents(url: Swift.String, request: ConsentUI.PostConsentsRequest) async
-  #endif
   public func isReady(callback: @escaping (ConsentUI.SDKStatus) -> Swift.Void)
   public func getStatus() -> ConsentUI.SDKStatus
   public func removeListeners()
-  #if compiler(>=5.3) && $AsyncAwait
   public func getPermissionConsents() async -> [ConsentUI.AppPermission]
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   public func getPurposeConsents() async -> [ConsentUI.Purpose]
-  #endif
   public func setConsent(purpose: ConsentUI.Purpose, consent: ConsentUI.ConsentStatus) -> Swift.Bool
   public func setConsent(permission: ConsentUI.AppPermission, consent: ConsentUI.ConsentStatus) -> Swift.Bool
-  #if compiler(>=5.3) && $AsyncAwait
   public func getBannerConfig(_ configuration: ConsentUI.MainConfiguration? = nil) async -> ConsentUI.BannerConfig?
-  #endif
   public func removeConsents()
   public func getConsent(privaciKey: ConsentUI.PrivaciKey) -> ConsentUI.ConsentStatus
   public func getConsent(purposeId: Swift.Int) -> ConsentUI.ConsentStatus
-  #if compiler(>=5.3) && $AsyncAwait
   public func getSettingsPrompt() async -> ConsentUI.SettingsPrompt?
-  #endif
 }
 extension ConsentUI.ConsentSDK {
   public func presentConsentBanner()
@@ -525,35 +516,35 @@ extension ConsentUI.ConsentSDK {
   public func registerColors(colors: ConsentUI.CustomColors)
   public func checkConsentBy(permissionId: ConsentUI.PrivaciKey, callback: @escaping (ConsentUI.ConsentStatus) -> Swift.Void)
 }
-extension SwiftUI.Image {
-  public static var dismiss: SwiftUI.Image {
+extension SwiftUICore.Image {
+  public static var dismiss: SwiftUICore.Image {
     get
   }
-  public static var backArrow: SwiftUI.Image {
+  public static var backArrow: SwiftUICore.Image {
     get
   }
-  public static var consentPreferences: SwiftUI.Image {
+  public static var consentPreferences: SwiftUICore.Image {
     get
   }
-  public static var upArrow: SwiftUI.Image {
+  public static var upArrow: SwiftUICore.Image {
     get
   }
-  public static var downArrow: SwiftUI.Image {
+  public static var downArrow: SwiftUICore.Image {
     get
   }
-  public static var forwardArrow: SwiftUI.Image {
+  public static var forwardArrow: SwiftUICore.Image {
     get
   }
-  public static var securitiLogoDark: SwiftUI.Image {
+  public static var securitiLogoDark: SwiftUICore.Image {
     get
   }
-  public static var securitiLogoLight: SwiftUI.Image {
+  public static var securitiLogoLight: SwiftUICore.Image {
     get
   }
-  public static var info: SwiftUI.Image {
+  public static var info: SwiftUICore.Image {
     get
   }
-  public static func createImage(_ value: Foundation.Data?, defaultImage: SwiftUI.Image) -> SwiftUI.Image
+  public static func createImage(_ value: Foundation.Data?, defaultImage: SwiftUICore.Image) -> SwiftUICore.Image
 }
 extension ConsentUI.ConsentStatus : Swift.RawRepresentable {}
 extension ConsentUI.SDKStatus : Swift.Equatable {}
